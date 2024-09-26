@@ -10,7 +10,7 @@ def getMapCode(vector, scn='scn_100k.gpkg'):
             if not feature.geometry:
                 continue
             featureGeometry = shape(feature.geometry)
-            if p1.within(featureGeometry):
+            if vector.within(featureGeometry):
                 map_code = feature.properties.get('code')
                 map_code_list.append(map_code)
         if len(map_code_list) == 1:
